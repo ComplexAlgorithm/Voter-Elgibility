@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Homework7Solution {
+
+   public static void main(String [] args) {
+      Scanner keyboard = new Scanner(System.in);
+      boolean anotherPerson;
+      do {
+         System.out.println("Enter your age");
+         int age = keyboard.nextInt();
+         
+         System.out.println("Are you a citizen? Enter true or false.");
+         boolean citizen = keyboard.nextBoolean();
+         
+         System.out.println("Are you a resident of a state? Enter true or false.");
+         boolean resident = keyboard.nextBoolean();
+         
+         System.out.println("Are you registered to vote? Enter true or false.");
+         boolean registered = keyboard.nextBoolean();
+         
+         if(age >= 18 && citizen == true && resident == true && registered == true) {
+            System.out.println("You are eligible to vote in the upcoming election.");
+         }
+         else {
+            if(age < 18) {
+               System.out.println("You are not eligible to vote becuase you are too young to vote.");
+            }
+            
+            if(citizen == false) {
+               System.out.println("You are not eligible to vote because you are not a citizen.");
+            }
+            
+            if(resident == false) {
+               System.out.println("You are not eligible to vote because you are not a resident.");
+            }
+            
+            if(registered == false) {
+               System.out.println("You are not eligible to vote because you are not registered to vote.");
+            }
+            
+         }
+         
+         System.out.println("Would you like to check for another person?");
+         anotherPerson = keyboard.nextBoolean();
+            
+      }while(anotherPerson == true);
+      
+   }
+}
